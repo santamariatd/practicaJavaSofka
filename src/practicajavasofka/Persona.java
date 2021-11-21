@@ -39,7 +39,7 @@ public class Persona {
     }
     
     private String generarDNI(){
-        char letras[] = {'T', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
+        char letras[] = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
         int aleatorioNum;
         String aleatorio = "";
         for (int i = 0; i < 8; i++) {
@@ -85,13 +85,14 @@ public class Persona {
     
     public int calcularIMC(){
         double imc = this.peso / Math.pow(this.altura, 2);
-        int respuesta;
+        int respuesta = 0;
         if (imc < 20){respuesta = -1;}
-        else if(imc >= 20 || imc <= 25 ) {respuesta = 0;}
-        else {respuesta = -1;}
+        else if(imc >= 20 && imc <= 25 ) {respuesta = 0;}
+        else if (imc > 25){respuesta = 1;}
         return respuesta;    
     }
     
+    @Override
     public String toString(){
         String informacion = ("DNI: "+this.DNI+" , Nombre: "+this.nombre+" , Edad: "+this.edad+" años" +" , Sexo: "+this.sexo+" , Peso: "+this.peso+" kg"+" , Altura: "+this.altura+" m");
         return informacion;
