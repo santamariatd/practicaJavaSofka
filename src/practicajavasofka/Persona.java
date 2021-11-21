@@ -4,6 +4,11 @@ package practicajavasofka;
  * @author Daniel Santamaría Tavera
  */
 public class Persona {
+    private final String nombreDefecto = "";
+    private final int edadDefecto = 0;
+    private final char sexoDefecto = 'H';
+    private final double pesoDefecto = 0;
+    private final double alturaDefecto = 0;
     private String DNI;
     private String nombre;
     private int edad;
@@ -13,11 +18,11 @@ public class Persona {
 
     public Persona() {
         this.DNI = this.generarDNI();
-        this.nombre = "";
-        this.edad = 0;
-        this.sexo = 'H';
-        this.peso = 0;
-        this.altura = 0;
+        this.nombre = this.nombreDefecto;
+        this.edad = this.edadDefecto;
+        this.sexo = this.sexoDefecto;
+        this.peso = this.pesoDefecto;
+        this.altura = this.alturaDefecto;
     }
 
     public Persona(String nombre, int edad, char sexo) {
@@ -25,8 +30,8 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = this.comprobarSexo(sexo);
-        this.peso = 0;
-        this.altura = 0;
+        this.peso = this.pesoDefecto;
+        this.altura = this.alturaDefecto;
     }
     
     public Persona(String nombre, int edad, char sexo, double peso, double altura) {

@@ -4,9 +4,12 @@ package practicajavasofka;
  * @author Daniel Santamaría Tavera
  */
 
-public class Serie {
+public class Serie implements Entregable{
     private final int numeroTemporadasDefecto = 3;
     private final boolean entregadoDefecto = false;
+    private final String tituloDefecto = "Serie [Nuevo]";
+    private final String generoDefecto = "Personajes";
+    private final String creadorDefecto = "Desconocido [pendiente]";
     private String titulo;
     private int numeroTemporadas;
     private boolean entregado;
@@ -14,18 +17,18 @@ public class Serie {
     private String creador;
 
     public Serie() {
-        this.titulo = "";
+        this.titulo = this.tituloDefecto;
         this.numeroTemporadas = this.numeroTemporadasDefecto;
         this.entregado = this.entregadoDefecto;
-        this.genero = "";
-        this.creador = "";
+        this.genero = this.generoDefecto;
+        this.creador = this.creadorDefecto;
     }
 
     public Serie(String titulo, String creador) {
         this.titulo = titulo;
         this.numeroTemporadas = this.numeroTemporadasDefecto;
         this.entregado = this.entregadoDefecto;
-        this.genero = "";
+        this.genero = this.generoDefecto;
         this.creador = creador;
     }
 
